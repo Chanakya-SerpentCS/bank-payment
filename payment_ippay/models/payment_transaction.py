@@ -49,6 +49,7 @@ class PaymentTansaction(models.Model):
                 'TransactionID')
             self.date = fields.Datetime.now()
             self.state = 'done'
+            return True
         else:
             self.state = 'cancel'
             invoice.message_post(
